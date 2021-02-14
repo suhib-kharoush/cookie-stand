@@ -6,7 +6,7 @@ let firstShop = {
     min: 23,
     max: 65,
     cookiesAvg: 6.3,
-    totalCookies: 0
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
 
@@ -14,9 +14,9 @@ let firstShop = {
         for (let i = 0; i < workingHours.length; i++) {
             this.cusPerHour[i] = randomAge(this.min, this.max);
 
-            this.getcusPerHour.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
+            this.cusPerHour.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
 
-
+            console.log(i);
             console.log(this.cusPerHour);
         }
 
@@ -32,14 +32,14 @@ let firstShop = {
 
     },
 }
-firstShop.getAvgSale()
+firstShop.getAvgSale();
 function randomAge(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 firstShop.getcusPerHour();
 firstShop.getAvgSale();
-console.log(getcusPerHour, getAvgSale);
+// console.log(getcusPerHour, getAvgSale);
 
 // Second shop
 let secondShop = {
@@ -71,7 +71,7 @@ function randomAge(min, max) {
 }
 secondShop.getcusPerHour();
 secondShop.getAvgSale();
-console.log(getcusPerHour, getAvgSale);
+// console.log(getcusPerHour, getAvgSale);
 
 // third shop
 let thirdShop = {
@@ -103,10 +103,10 @@ function randomAge(min, max) {
 }
 thirdShop.getcusPerHour();
 thirdShop.getAvgSale();
-console.log(getcusPerHour, getAvgSale);
+// console.log(cusPerHour);
 
 // fourth shop
-let fourthdShop = {
+let fourthShop = {
     location: 'Paris',
     min: 20,
     max: 38,
@@ -135,7 +135,7 @@ function randomAge(min, max) {
 }
 fourthShop.getcusPerHour();
 fourthShop.getAvgSale();
-console.log(getcusPerHour, getAvgSale);
+// console.log(getcusPerHour, getAvgSale);
 
 // fifth shop
 let fifthShop = {
@@ -167,4 +167,4 @@ function randomAge(min, max) {
 }
 fifthShop.getcusPerHour();
 fifthShop.getAvgSale();
-console.log(getcusPerHour, getAvgSale);
+// console.log(getcusPerHour, getAvgSale);
