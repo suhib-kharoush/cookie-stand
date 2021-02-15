@@ -257,4 +257,40 @@ function random(min, max) {
 
 fifthShop.getcusPerHour();
 fifthShop.getAvgSale();
+<<<<<<< HEAD
 console.log(fifthShop);
+=======
+// console.log(getcusPerHour, getAvgSale);
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function firstShop(location,min,max,cookiesAvg,cusPerHour,AvgSale,totalCookies){
+    this.location = location;
+    this.min = min;
+    this.max = max;
+    this.cookiesAvg = cookiesAvg;
+    this.cusPerHour = []
+    this.AvgSale = []
+    this.totalCookies = totalCookies;
+}
+firstShop.prototype.getcust = function(){
+    for (let i = 0; i < workingHours.length; i++){
+        let cust = getRandomInt(this.min,this.max);
+        this.cusPerHour.push(cust);
+    }
+};
+
+firstShop.prototype.getCookies = function(){
+    for(let i = 0; i < workingHours.length; i++){
+        this.AvgSale.push(Math.floor(this.cusPerHour[i]*this.cookiesAvg));
+
+    }
+};
+
+// firstShop.prototype.
+
+let parent = document.getElementById('tableContent');
+console.log(parent);
+>>>>>>> constructo-function
