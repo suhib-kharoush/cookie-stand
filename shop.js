@@ -12,159 +12,236 @@ let firstShop = {
 
     getcusPerHour: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.cusPerHour[i] = randomAge(this.min, this.max);
+            this.cusPerHour.push(random(this.min, this.max));
 
-            this.cusPerHour.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
 
-            console.log(i);
-            console.log(this.cusPerHour);
+
         }
 
     },
 
     getAvgSale: function () {
-        for (let i = 0; i <= workingHours.length; i++) {
-            this.cusPerHour[i] = randomAge(this.min, this.max);
-            this.AvgSale.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
-            console.log(this.AvgSale);
+        for (let i = 0; i < workingHours.length; i++) {
+            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
+
+
+        }firstShop.gettotalCookies();
+
+
+    }, 
+    
+    gettotalCookies: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+            this.totalCookies = this.totalCookies + this.AvgSale[i];
+           
+            console.log(this.gettotalCookies);
         }
-
-
     },
+
+
 }
-firstShop.getAvgSale();
-function randomAge(min, max) {
+
+function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+    
 }
 
 firstShop.getcusPerHour();
 firstShop.getAvgSale();
+console.log(firstShop);
 // console.log(getcusPerHour, getAvgSale);
 
-// Second shop
+// // Second shop
 let secondShop = {
     location: 'Tokyo',
     min: 3,
     max: 24,
     cookiesAvg: 1.2,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
-        for (let i = 0; i <= workingHours.length; i++) {
-            this.cusPerHour[i] = randomAge(this.min, this.max);
-            workingHours.push
-            console.log(this.cusPerHour);
+        for (let i = 0; i < workingHours.length; i++) {
+            this.cusPerHour.push(random(this.min, this.max));
+
+
+
         }
 
     },
+
     getAvgSale: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale[i] = this.cusPerHour[i] * this.cookiesAvg;
-            console.log(this.AvgSale);
-        }
+            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
 
+
+        }secondShop.gettotalCookies();
+
+
+    }, 
+    
+    gettotalCookies: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+            this.totalCookies = this.totalCookies + this.AvgSale[i];
+           
+            console.log(this.gettotalCookies);
+        }
     },
 
+
 }
-function randomAge(min, max) {
+
+function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+    
 }
+
 secondShop.getcusPerHour();
 secondShop.getAvgSale();
-// console.log(getcusPerHour, getAvgSale);
+console.log(secondShop);
 
-// third shop
+// // third shop
 let thirdShop = {
     location: 'Dubai',
     min: 11,
     max: 38,
     cookiesAvg: 3.7,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
-        for (let i = 0; i <= workingHours.length; i++) {
-            this.cusPerHour[i] = randomAge(this.min, this.max);
-            workingHours.push
-            console.log(this.cusPerHour);
+        for (let i = 0; i < workingHours.length; i++) {
+            this.cusPerHour.push(random(this.min, this.max));
+
+
+
         }
 
     },
+
     getAvgSale: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale[i] = this.cusPerHour[i] * this.cookiesAvg;
-            console.log(this.AvgSale);
-        }
+            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
 
+
+        }thirdShop.gettotalCookies();
+
+
+    }, 
+    
+    gettotalCookies: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+            this.totalCookies = this.totalCookies + this.AvgSale[i];
+           
+            console.log(this.gettotalCookies);
+        }
     },
 
+
 }
-function randomAge(min, max) {
+
+function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+    
 }
+
 thirdShop.getcusPerHour();
 thirdShop.getAvgSale();
-// console.log(cusPerHour);
-
-// fourth shop
+console.log(thirdShop);
+// // fourth shop
 let fourthShop = {
     location: 'Paris',
     min: 20,
     max: 38,
     cookiesAvg: 2.3,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
-        for (let i = 0; i <= workingHours.length; i++) {
-            this.cusPerHour[i] = randomAge(this.min, this.max);
-            workingHours.push
-            console.log(this.cusPerHour);
+        for (let i = 0; i < workingHours.length; i++) {
+            this.cusPerHour.push(random(this.min, this.max));
+
+
+
         }
 
     },
+
     getAvgSale: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale[i] = this.cusPerHour[i] * this.cookiesAvg;
-            console.log(this.AvgSale);
-        }
+            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
 
+
+        }fourthShop.gettotalCookies();
+
+
+    }, 
+    
+    gettotalCookies: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+            this.totalCookies = this.totalCookies + this.AvgSale[i];
+           
+            console.log(this.gettotalCookies);
+        }
     },
 
+
 }
-function randomAge(min, max) {
+
+function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+    
 }
+
 fourthShop.getcusPerHour();
 fourthShop.getAvgSale();
-// console.log(getcusPerHour, getAvgSale);
+console.log(fourthShop);
 
-// fifth shop
+// // fifth shop
 let fifthShop = {
     location: 'Lima',
     min: 2,
     max: 16,
     cookiesAvg: 4.6,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
-        for (let i = 0; i <= workingHours.length; i++) {
-            this.cusPerHour[i] = randomAge(this.min, this.max);
-            workingHours.push
-            console.log(this.cusPerHour);
+        for (let i = 0; i < workingHours.length; i++) {
+            this.cusPerHour.push(random(this.min, this.max));
+
+
+
         }
 
     },
+
     getAvgSale: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale[i] = this.cusPerHour[i] * this.cookiesAvg;
-            console.log(this.AvgSale);
-        }
+            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
 
+
+        }fifthShop.gettotalCookies();
+
+
+    }, 
+    
+    gettotalCookies: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+            this.totalCookies = this.totalCookies + this.AvgSale[i];
+           
+            console.log(this.gettotalCookies);
+        }
     },
 
+
 }
-function randomAge(min, max) {
+
+function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+    
 }
+
 fifthShop.getcusPerHour();
 fifthShop.getAvgSale();
-// console.log(getcusPerHour, getAvgSale);
+console.log(fifthShop);
