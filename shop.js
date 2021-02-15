@@ -47,6 +47,7 @@ let secondShop = {
     min: 3,
     max: 24,
     cookiesAvg: 1.2,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
@@ -79,6 +80,7 @@ let thirdShop = {
     min: 11,
     max: 38,
     cookiesAvg: 3.7,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
@@ -111,6 +113,7 @@ let fourthShop = {
     min: 20,
     max: 38,
     cookiesAvg: 2.3,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
@@ -143,6 +146,7 @@ let fifthShop = {
     min: 2,
     max: 16,
     cookiesAvg: 4.6,
+    totalCookies: 0,
     cusPerHour: [],
     AvgSale: [],
     getcusPerHour: function () {
@@ -168,3 +172,35 @@ function randomAge(min, max) {
 fifthShop.getcusPerHour();
 fifthShop.getAvgSale();
 // console.log(getcusPerHour, getAvgSale);
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function firstShop(location,min,max,cookiesAvg,cusPerHour,AvgSale,totalCookies){
+    this.location = location;
+    this.min = min;
+    this.max = max;
+    this.cookiesAvg = cookiesAvg;
+    this.cusPerHour = []
+    this.AvgSale = []
+    this.totalCookies = totalCookies;
+}
+firstShop.prototype.getcust = function(){
+    for (let i = 0; i < workingHours.length; i++){
+        let cust = getRandomInt(this.min,this.max);
+        this.cusPerHour.push(cust);
+    }
+};
+
+firstShop.prototype.getCookies = function(){
+    for(let i = 0; i < workingHours.length; i++){
+        this.AvgSale.push(Math.floor(this.cusPerHour[i]*this.cookiesAvg));
+
+    }
+};
+
+// firstShop.prototype.
+
+let parent = document.getElementById('tableContent');
+console.log(parent);
