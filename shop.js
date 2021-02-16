@@ -1,278 +1,353 @@
 'use strict';
-let workingHours = ['6am', '7am', '8am', '9am', '10am', '11am,', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-// first shop
+
+let workingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-let firstShop = {
-    location: 'Seattle',
-    min: 23,
-    max: 65,
-    cookiesAvg: 6.3,
-    totalCookies: 0,
-    cusPerHour: [],
-    AvgSale: [],
 
-    getcusPerHour: function () {
+
+
+let seattle = {
+    locationName: 'Seattle',
+    minCustomers: 23,
+    maxCustomers: 65,
+    avgCookies: 6.3,
+    customersEachHour: [],
+    cookiesEachHour: [],
+    total: 0,
+
+    calcCustomersEachHour: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.cusPerHour.push(random(this.min, this.max));
-
-
-
+            this.customersEachHour.push(random(this.minCustomers, this.maxCustomers));
         }
-
     },
 
-
-
-
-    getAvgSale: function () {
+    calcCookiesEachHour: function () {
         for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
 
+            this.cookiesEachHour.push(Math.floor(this.customersEachHour[i] * this.avgCookies));
 
-        } firstShop.gettotalCookies();
-
-
-    },
-
-    gettotalCookies: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.totalCookies = this.totalCookies + this.AvgSale[i];
-
+            this.total += this.cookiesEachHour[i]
         }
-
     },
+    render: function () {
+    
+        let parent = document.getElementById('parent');
+        console.log(parent);
+
+        let shopName = document.createElement('h3');
+
+        parent.appendChild(shopName);
 
  
+        shopName.textContent = this.locationName;
 
+
+        let unorderedList = document.createElement('ul');
+ 
+        parent.appendChild(unorderedList);
+
+
+        for (let i = 0; i < workingHours.length; i++) {
+   
+            let listItem = document.createElement('li');
+
+            unorderedList.appendChild(listItem);
+
+            listItem.textContent = `${workingHours[i]}: ${this.cookiesEachHour[i]} cookies`
+        }
+
+
+        let totalItem = document.createElement('li');
+
+        unorderedList.appendChild(totalItem);
+
+        totalItem.textContent = `total: ${this.total} cookies`;
+
+    }
 
 }
 
-firstShop.getcusPerHour();
-firstShop.getAvgSale();
+
+seattle.calcCustomersEachHour();
+seattle.calcCookiesEachHour();
+seattle.render();
+console.log(seattle);
 
 
-// // Second shop
+// second shop
+
+
 let secondShop = {
-    location: 'Tokyo',
+    locationName: 'Tokyo',
     min: 3,
     max: 24,
-    cookiesAvg: 1.2,
-    totalCookies: 0,
+    avgCookies: 1.2,
     cusPerHour: [],
-    AvgSale: [],
+    cookiesPerHour: [],
+    total: 0,
+
+   
     getcusPerHour: function () {
         for (let i = 0; i < workingHours.length; i++) {
             this.cusPerHour.push(random(this.min, this.max));
-
-
-
-        }
-
-    },
-
-    getAvgSale: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
-
-
-        }secondShop.gettotalCookies();
-
-
-    }, 
-
-    gettotalCookies: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.totalCookies = this.totalCookies + this.AvgSale[i];
-
         }
     },
 
+    getcookiesPerHour: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+      
+            this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
+
+            this.total += this.cookiesPerHour[i]
+        }
+    },
+    render: function () {
+    
+        let parent = document.getElementById('parent');
+        console.log(parent);
+
+        let shopName = document.createElement('h3');
+
+        parent.appendChild(shopName);
+
+
+        shopName.textContent = this.locationName;
+
+  
+        let unorderedList = document.createElement('ul');
+ 
+        parent.appendChild(unorderedList);
+
+
+        for (let i = 0; i < workingHours.length; i++) {
+
+            let listItem = document.createElement('li');
+      
+            unorderedList.appendChild(listItem);
+   
+            listItem.textContent = `${workingHours[i]}: ${this.cookiesPerHour[i]} cookies`
+        }
+
+
+        let totalItem = document.createElement('li');
+
+        unorderedList.appendChild(totalItem);
+
+        totalItem.textContent = `total: ${this.total} cookies`;
+
+    }
 
 }
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-
-}
 
 secondShop.getcusPerHour();
-secondShop.getAvgSale();
+secondShop.getcookiesPerHour();
+secondShop.render();
+console.log(secondShop);
 
-// // // third shop
+
+// third shop:
+
 let thirdShop = {
-    location: 'Dubai',
-    min: 11,
-    max: 38,
-    cookiesAvg: 3.7,
-    totalCookies: 0,
+    locationName: 'Dubai',
+    min: 23,
+    max: 65,
+    avgCookies: 6.3,
     cusPerHour: [],
-    AvgSale: [],
+    cookiesPerHour: [],
+    total: 0,
+
     getcusPerHour: function () {
         for (let i = 0; i < workingHours.length; i++) {
             this.cusPerHour.push(random(this.min, this.max));
-
-
-
-        }
-
-    },
-
-    getAvgSale: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
-
-
-        }thirdShop.gettotalCookies();
-
-
-    }, 
-
-    gettotalCookies: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.totalCookies = this.totalCookies + this.AvgSale[i];
-
         }
     },
 
-    render:function(){
-       
-        let parent= document.getElementById('parent');
+    getcookiesPerHour: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+    
+            this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
+
+            this.total += this.cookiesPerHour[i]
+        }
+    },
+    render: function () {
+  
+        let parent = document.getElementById('parent');
         console.log(parent);
-        
-        
+
         let shopName = document.createElement('h3');
-        
+
         parent.appendChild(shopName);
-        
-       
+
+
         shopName.textContent = this.locationName;
-     
-        let unorderedList=document.createElement('ul');
-      
+
+
+        let unorderedList = document.createElement('ul');
+
         parent.appendChild(unorderedList);
-         
+
+
+        for (let i = 0; i < workingHours.length; i++) {
+  
+            let listItem = document.createElement('li');
+
+            unorderedList.appendChild(listItem);
     
-        for(let i =0;i<workingHours.length;i++){
-        
-          let listItem=document.createElement('li');
-         
-          unorderedList.appendChild(listItem);
-         
-          listItem.textContent = `${workingHours[i]}: ${this.cusPerHour[i]} cookies`
+            listItem.textContent = `${workingHours[i]}: ${this.cookiesPerHour[i]} cookies`
         }
-    
-    
+
         let totalItem = document.createElement('li');
-    
+
         unorderedList.appendChild(totalItem);
-    
-        totalItem.textContent=`total: ${this.total} cookies`;
-        
-      }
+
+        totalItem.textContent = `total: ${this.total} cookies`;
+
+    }
+
 }
+
 thirdShop.getcusPerHour();
-thirdShop.getAvgSale();
-thirdShop.gettotalCookies();
+thirdShop.getcookiesPerHour();
 thirdShop.render();
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+console.log(thirdShop);
 
-}
 
-thirdShop.getcusPerHour();
-thirdShop.getAvgSale();
-// // // fourth shop
+// fourth shop:
+
 let fourthShop = {
-    location: 'Paris',
+    locationName: 'Paris',
     min: 20,
     max: 38,
-    cookiesAvg: 2.3,
-    totalCookies: 0,
+    avgCookies: 2.3,
     cusPerHour: [],
-    AvgSale: [],
-    getcusPerHour: function () {
+    cookiesPerHour: [],
+    total: 0,
+
+ 
+      getcusPerHour: function () {
         for (let i = 0; i < workingHours.length; i++) {
             this.cusPerHour.push(random(this.min, this.max));
-
-
-
-        }
-
-    },
-
-    getAvgSale: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
-
-
-        }fourthShop.gettotalCookies();
-
-
-    }, 
-
-    gettotalCookies: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.totalCookies = this.totalCookies + this.AvgSale[i];
-
         }
     },
 
+    getcookiesPerHour: function () {
+        for (let i = 0; i < workingHours.length; i++) {
+         
+            this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
 
-}
+            this.total += this.cookiesPerHour[i]
+        }
+    },
+    render: function () {
+    
+        let parent = document.getElementById('parent');
+        console.log(parent);
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+        let shopName = document.createElement('h3');
+
+        parent.appendChild(shopName);
+
+   
+        shopName.textContent = this.locationName;
+
+    
+        let unorderedList = document.createElement('ul');
+  
+        parent.appendChild(unorderedList);
+
+
+        for (let i = 0; i < workingHours.length; i++) {
+       
+            let listItem = document.createElement('li');
+         
+            unorderedList.appendChild(listItem);
+       
+            listItem.textContent = `${workingHours[i]}: ${this.cookiesPerHour[i]} cookies`
+        }
+
+
+        let totalItem = document.createElement('li');
+
+        unorderedList.appendChild(totalItem);
+
+        totalItem.textContent = `total: ${this.total} cookies`;
+
+    }
 
 }
 
 fourthShop.getcusPerHour();
-fourthShop.getAvgSale();
+fourthShop.getcookiesPerHour();
+fourthShop.render();
+console.log(fourthShop);
 
+// fifth shop:
 
-// // // fifth shop
 let fifthShop = {
-    location: 'Lima',
+    locationName: 'Lima',
     min: 2,
     max: 16,
-    cookiesAvg: 4.6,
-    totalCookies: 0,
+    avgCookies: 4.6,
     cusPerHour: [],
-    AvgSale: [],
-    getcusPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.cusPerHour.push(random(this.min, this.max));
+    cookiesPerHour: [],
+    total: 0,
 
-
-
+          getcusPerHour: function () {
+            for (let i = 0; i < workingHours.length; i++) {
+                this.cusPerHour.push(random(this.min, this.max));
+            }
+        },
+    
+        getcookiesPerHour: function () {
+            for (let i = 0; i < workingHours.length; i++) {
+         
+                this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
+    
+                this.total += this.cookiesPerHour[i]
+            }
+        },
+        render: function () {
+    
+            let parent = document.getElementById('parent');
+            console.log(parent);
+    
+            let shopName = document.createElement('h3');
+    
+            parent.appendChild(shopName);
+    
+       
+            shopName.textContent = this.locationName;
+    
+    
+            let unorderedList = document.createElement('ul');
+       
+            parent.appendChild(unorderedList);
+    
+    
+            for (let i = 0; i < workingHours.length; i++) {
+             
+                let listItem = document.createElement('li');
+           
+                unorderedList.appendChild(listItem);
+               
+                listItem.textContent = `${workingHours[i]}: ${this.cookiesPerHour[i]} cookies`
+            }
+    
+   
+            let totalItem = document.createElement('li');
+    
+            unorderedList.appendChild(totalItem);
+    
+            totalItem.textContent = `total: ${this.total} cookies`;
+    
         }
-
-    },
-
-    getAvgSale: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.AvgSale.push(Math.floor(this.cusPerHour[i] * this.cookiesAvg));
-
-
-        }fifthShop.gettotalCookies();
-
-
-    }, 
-
-    gettotalCookies: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.totalCookies = this.totawlCookies + this.AvgSale[i];
-
-             e.log(this.gettotalCookies);
-        }
-    },
-
-
-}
-
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-
-}
-
+    
+    }
+    
+    fifthShop.getcusPerHour();
+    fifthShop.getcookiesPerHour();
+    fifthShop.render();
