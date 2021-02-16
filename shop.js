@@ -350,4 +350,8 @@ let fifthShop = {
     
     fifthShop.getcusPerHour();
     fifthShop.getcookiesPerHour();
+<<<<<<< HEAD
     fifthShop.render();
+=======
+    fifthShop.render();
+>>>>>>> main
