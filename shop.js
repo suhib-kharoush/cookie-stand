@@ -357,8 +357,9 @@ let TableCreator = {
         //get div
         let containerDiv = document.getElementById('container');
         //create table element
+        console.log(containerDiv)
         let tableElement = document.createElement("table");
-        let tableHeader=document.createElement("thead");
+        let tableHeader = document.createElement("thead");
 
         // Header row
         let headerRow = document.createElement('tr');
@@ -368,10 +369,11 @@ let TableCreator = {
         headerRow.appendChild(nameCell);
 
 
+
         for (var i = 0; i < workingHours.length; i++) {
             // "NORMAL" CELL
             let headerCell = document.createElement("th");
-            headerCell.innerHTML = workingHours[i];     
+            headerCell.innerHTML = workingHours[i];
             headerRow.appendChild(headerCell);
         }
         //Total cell
@@ -382,7 +384,7 @@ let TableCreator = {
         tableElement.appendChild(tableHeader);
 
 
-        let tableBody=document.createElement("tbody");
+        let tableBody = document.createElement("tbody");
 
         // End header
 
@@ -393,7 +395,7 @@ let TableCreator = {
         tableElement.appendChild(tableBody);
 
         tableElement.classList.add("styled-table");
-  
+
         containerDiv.appendChild(tableElement);
     }
 }
@@ -454,7 +456,20 @@ function createSumRow() {
     sumRow.appendChild(totalColumn);
     return sumRow;
 }
-var element = document.getElementById('name');
-element.addEventListener('mouseover', function() {
-  console.log('Event triggered');
-});
+
+
+let salesData = document.getElementById('salesData');
+salesData.addEventListener('submit' ,submitter)
+
+function submitter(event)
+{
+    event.preventDefault();
+    location.innerHTML =''
+
+    let userShop = event.target.location.value;
+    console.log(userShop);
+    let minimum = event.target.min.value;
+    let maximum = event.target.max.value;
+    let average = event.target.avg.value;
+}
+
