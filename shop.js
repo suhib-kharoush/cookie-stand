@@ -73,8 +73,6 @@ firstShop.calcCustomersEachHour();
 firstShop.calcCookiesEachHour();
 // firstShop.render();
 
-
-
 // second shop
 
 
@@ -360,8 +358,8 @@ let TableCreator = {
         let containerDiv = document.getElementById('container');
         //create table element
         let tableElement = document.createElement("table");
-
         let tableHeader=document.createElement("thead");
+
         // Header row
         let headerRow = document.createElement('tr');
 
@@ -373,8 +371,7 @@ let TableCreator = {
         for (var i = 0; i < workingHours.length; i++) {
             // "NORMAL" CELL
             let headerCell = document.createElement("th");
-            headerCell.innerHTML = workingHours[i];
-     
+            headerCell.innerHTML = workingHours[i];     
             headerRow.appendChild(headerCell);
         }
         //Total cell
@@ -396,6 +393,7 @@ let TableCreator = {
         tableElement.appendChild(tableBody);
 
         tableElement.classList.add("styled-table");
+  
         containerDiv.appendChild(tableElement);
     }
 }
@@ -408,6 +406,7 @@ function createShopRow(shop) {
 
     let nameColumn = document.createElement("td");
     nameColumn.innerHTML = shop.location;
+
     shopRow.appendChild(nameColumn);
 
     for (var i = 0; i < workingHours.length; i++) {
@@ -419,7 +418,6 @@ function createShopRow(shop) {
 
     let totalColumn = document.createElement("td");
     totalColumn.innerHTML = shop.total;
-
     shopRow.appendChild(totalColumn);
     return shopRow;
 }
@@ -430,6 +428,7 @@ function createSumRow() {
 
     let sumColumn = document.createElement("td");
     sumColumn.innerHTML = "Summation";
+
     sumRow.appendChild(sumColumn);
 
     for (var i = 0; i < workingHours.length; i++) {
