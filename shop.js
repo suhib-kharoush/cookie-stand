@@ -471,5 +471,5 @@ function submitter(event)
     let minimum = event.target.min.value;
     let maximum = event.target.max.value;
     let average = event.target.avg.value;
-}
 
+}
