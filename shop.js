@@ -235,6 +235,69 @@ for(let i=0; i < workingHours.length; i++){
         totalOfAll+=shopArray[j].cookiesPerHour[i]
     }
 
+
+   let names = document.createElement('td');
+   data.appendChild(names);
+   names.textContent = this.location;
+
+   for(let i=0; i<workingHours.length; i++){
+       let tdElement = document.createElement('td');
+       tdElement.textContent = this.cookiesPerHour[i]
+       data.appendChild(tdElement)
+   }
+
+   let totalDay = document.createElement('td');
+
+   data.appendChild(totalDay);
+   totalDay.textContent = this.total
+
+    totals=document.createElement('th');
+    totalRow.appendChild(totals);
+    totals.textContent=totPerHour;
+}
+
+
+let summation =document.createElement('th');
+totalRow.appendChild(summation);
+summation.textContent=totalOfAll
+
+}
+
+
+
+makeHeader();
+
+
+
+
+
+for (let i = 0; i < shopArray.length; i++) {
+    shopArray[i].calcCustomersEachHour();
+    shopArray[i].calcCustomersEachHour();
+    shopArray[i].render();
+}
+
+let totalOfTotal = function(){
+    let totalRow = document.createElement('tr');
+    table.appendChild(totalRow);
+
+    let totals = document.createElement('th');
+    totalRow.appendChild(totals);
+    totals.textContent='Totals'
+
+
+
+let totalOfAll=0;   
+
+for(let i=0; i < workingHours.length; i++){
+     
+    let totPerHour=0;
+
+    for(let j=0; j<shopArray.length; j++){
+        totPerHour+=shopArray[j].cookiesPerHour[i]
+        totalOfAll+=shopArray[j].cookiesPerHour[i]
+    }
+
     totals=document.createElement('th');
     totalRow.appendChild(totals);
     totals.textContent=totPerHour;
@@ -252,6 +315,8 @@ makeHeader();
 
 
 
+
+totalOfTotal();
 
 
 for (let i = 0; i < shopArray.length; i++) {

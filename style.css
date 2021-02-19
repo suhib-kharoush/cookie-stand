@@ -1,7 +1,15 @@
 
+
 table,th, td{
     border: solid;
     text-align: center;
+
+table, td, tr, th{
+    border: solid;
+}
+
+.styled-table {
+
     border-collapse: collapse;
 }
 
@@ -21,6 +29,7 @@ h1:hover{text-align: center;
 background-color: orangered;
 font-style: oblique;
 }
+
 
 div{float: right;}
 td:hover{background-color:mediumturquoise;}
@@ -71,3 +80,4 @@ background-size: 100%;}
     width: auto;
     height: auto;
     overflow:hidden;}
+
