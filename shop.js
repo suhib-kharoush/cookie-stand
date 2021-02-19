@@ -28,65 +28,6 @@ Shop.prototype.calcCookiesEachHour = function () {
 
         this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookies));
 
-// first shop
-let firstShop = {
-    location: 'Seattle',
-    min: 23,
-    max: 65,
-    avgCookies: 6.3,
-    customersPerHour: [],
-    cookiesPerHour: [],
-    total: 0,
-
-    calcCustomersEachHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.customersPerHour.push(random(this.min, this.max));
-        }
-    },
-
-    calcCookiesEachHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-
-            this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookies));
-
-            this.total += this.cookiesPerHour[i]
-        }
-    },
-    render: function () {
-
-        let parent = document.getElementById('parent');
-        console.log(parent);
-
-        let shopName = document.createElement('h3');
-
-        parent.appendChild(shopName);
-
-
-        shopName.textContent = this.location;
-
-
-        let unorderedList = document.createElement('ul');
-
-        parent.appendChild(unorderedList);
-
-
-        for (let i = 0; i < workingHours.length; i++) {
-
-            let listItem = document.createElement('li');
-
-            unorderedList.appendChild(listItem);
-
-            listItem.textContent = `${workingHours[i]}: ${this.cookiesPerHour[i]} cookies`
-        }
-
-
-        let totalItem = document.createElement('li');
-
-        unorderedList.appendChild(totalItem);
-
-        totalItem.textContent = `total: ${this.total} cookies`;
-
-
         this.total += this.cookiesPerHour[i]
     }
 }
@@ -99,12 +40,8 @@ let fifthShop = new Shop('Lima', 2, 16, 4.6);
 firstShop.calcCustomersEachHour();
 firstShop.calcCookiesEachHour();
 
-
 secondShop.calcCustomersEachHour();
 secondShop.calcCookiesEachHour();
-
-// firstShop.render();
-
 
 thirdShop.calcCustomersEachHour();
 thirdShop.calcCookiesEachHour();
@@ -192,53 +129,10 @@ fifthShop.calcCookiesEachHour();
 
 //     let sumRow = document.createElement("tr");
 
-
 //     let sumColumn = document.createElement("td");
 //     sumColumn.innerHTML = "summation";
 //     sumColumn.style.border = " 1px solid black";
 //     sumRow.appendChild(sumColumn);
-
-    }
-
-}
-
-
-secondShop.getcusPerHour();
-secondShop.getcookiesPerHour();
-secondShop.render();
-
-
-
-// third shop:
-
-let thirdShop = {
-    location: 'Dubai',
-    min: 23,
-    max: 65,
-    avgCookies: 6.3,
-    cusPerHour: [],
-    cookiesPerHour: [],
-    total: 0,
-
-    getcusPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.cusPerHour.push(random(this.min, this.max));
-        }
-    },
-
-    getcookiesPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-
-            this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
-
-            this.total += this.cookiesPerHour[i]
-        }
-    },
-    render: function () {
-
-        let parent = document.getElementById('parent');
-        console.log(parent);
-
 
 //     for (var i = 0; i < workingHours.length; i++) {
 //         // "NORMAL" CELL
@@ -291,123 +185,16 @@ for(let i = 0; i < workingHours.length; i++){
     thElement.textContent=workingHours[i]
 }
 
-
 let dailyTotal = document.createElement('th');
 dailyTotal.textContent= 'Daily totals'
 header.appendChild(dailyTotal)
 
-thirdShop.getcusPerHour();
-thirdShop.getcookiesPerHour();
-// thirdShop.render();
-
-
-
-// fourth shop:
-
-let fourthShop = {
-    location: 'Paris',
-    min: 20,
-    max: 38,
-    avgCookies: 2.3,
-    cusPerHour: [],
-    cookiesPerHour: [],
-    total: 0,
-
-
-    getcusPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.cusPerHour.push(random(this.min, this.max));
-        }
-    },
-
-    getcookiesPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-
-            this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
-
-            this.total += this.cookiesPerHour[i]
-        }
-    },
-    render: function () {
-
-        let parent = document.getElementById('parent');
-        console.log(parent);
-
-        let shopName = document.createElement('h3');
-
-        parent.appendChild(shopName);
-
-
-        shopName.textContent = this.location;
-
-
-        let unorderedList = document.createElement('ul');
-
-        parent.appendChild(unorderedList);
-
-
-        for (let i = 0; i < workingHours.length; i++) {
-
-            let listItem = document.createElement('li');
-
-            unorderedList.appendChild(listItem);
-
-            listItem.textContent = `${workingHours[i]}: ${this.cookiesPerHour[i]} cookies`
-        }
-
-
-        let totalItem = document.createElement('li');
-
-        unorderedList.appendChild(totalItem);
-
-        totalItem.textContent = `total: ${this.total} cookies`;
-
-    }
-
-
    
 }
-
 
 Shop.prototype.render=function(){
    let data = document.createElement('tr');
    table.appendChild(data);
-
-fourthShop.getcusPerHour();
-fourthShop.getcookiesPerHour();
-// fourthShop.render();
-
-
-// fifth shop:
-
-let fifthShop = {
-    location: 'Lima',
-    min: 2,
-    max: 16,
-    avgCookies: 4.6,
-    cusPerHour: [],
-    cookiesPerHour: [],
-    total: 0,
-
-    getcusPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-            this.cusPerHour.push(random(this.min, this.max));
-        }
-    },
-
-    getcookiesPerHour: function () {
-        for (let i = 0; i < workingHours.length; i++) {
-
-            this.cookiesPerHour.push(Math.floor(this.cusPerHour[i] * this.avgCookies));
-
-            this.total += this.cookiesPerHour[i]
-        }
-    },
-    render: function () {
-
-        let parent = document.getElementById('parent');
-        console.log(parent);
-
 
 
    let names = document.createElement('td');
@@ -453,7 +240,6 @@ for(let i=0; i < workingHours.length; i++){
     totals.textContent=totPerHour;
 }
 
-
 let summation =document.createElement('th');
 totalRow.appendChild(summation);
 summation.textContent=totalOfAll
@@ -462,107 +248,10 @@ summation.textContent=totalOfAll
 
 
 
-fifthShop.getcusPerHour();
-fifthShop.getcookiesPerHour();
-// fifthShop.render();
-
-
-let shopArray = [firstShop, secondShop, thirdShop, fourthShop, fifthShop];
-let TableCreator = {
-
-    renderTable: function () {
-        //get div
-        let containerDiv = document.getElementById('container');
-        //create table element
-        console.log(containerDiv)
-        let tableElement = document.createElement("table");
-        let tableHeader = document.createElement("thead");
-
-        // Header row
-        let headerRow = document.createElement('tr');
-
-        let nameCell = document.createElement("th");
-        nameCell.innerHTML = "Shop name";
-        headerRow.appendChild(nameCell);
-
-
-
-        for (var i = 0; i < workingHours.length; i++) {
-            // "NORMAL" CELL
-            let headerCell = document.createElement("th");
-            headerCell.innerHTML = workingHours[i];
-            headerRow.appendChild(headerCell);
-        }
-        //Total cell
-        let totalCell = document.createElement("th");
-        totalCell.innerHTML = "Total";
-        headerRow.appendChild(totalCell);
-        tableHeader.appendChild(headerRow);
-        tableElement.appendChild(tableHeader);
-
-
-        let tableBody = document.createElement("tbody");
-
-        // End header
-
-        shopArray.forEach(shop => {
-            tableBody.appendChild(createShopRow(shop));
-        });
-        tableBody.appendChild(createSumRow());
-        tableElement.appendChild(tableBody);
-
-        tableElement.classList.add("styled-table");
-
-        containerDiv.appendChild(tableElement);
-    }
-}
-
-TableCreator.renderTable();
-
-function createShopRow(shop) {
-
-    let shopRow = document.createElement("tr");
-
-    let nameColumn = document.createElement("td");
-    nameColumn.innerHTML = shop.location;
-
-    shopRow.appendChild(nameColumn);
-
-    for (var i = 0; i < workingHours.length; i++) {
-        // "NORMAL" CELL
-        let column = document.createElement("td");
-        column.innerHTML = shop.cookiesPerHour[i];
-        shopRow.appendChild(column);
-    }
-
-    let totalColumn = document.createElement("td");
-    totalColumn.innerHTML = shop.total;
-    shopRow.appendChild(totalColumn);
-    return shopRow;
-}
-
-
 makeHeader();
 
 
 
-    let sumColumn = document.createElement("td");
-    sumColumn.innerHTML = "Summation";
-
-    sumRow.appendChild(sumColumn);
-
-
-
-
-        let column = document.createElement("td");
-        column.innerHTML = sum;
-        sumRow.appendChild(column);
-    }
-
-    let totalSum = 0;
-    shopArray.forEach(shop => {
-        totalSum += shop.total;
-    });
 
 
 for (let i = 0; i < shopArray.length; i++) {
@@ -571,28 +260,4 @@ for (let i = 0; i < shopArray.length; i++) {
     shopArray[i].render();
 }
 
-
 totalOfTotal();
-
-    let totalColumn = document.createElement("td");
-    totalColumn.innerHTML = totalSum;
-    sumRow.appendChild(totalColumn);
-    return sumRow;
-}
-
-
-let salesData = document.getElementById('salesData');
-salesData.addEventListener('submit' ,submitter)
-
-function submitter(event)
-{
-    event.preventDefault();
-    location.innerHTML =''
-
-    let userShop = event.target.location.value;
-    console.log(userShop);
-    let minimum = event.target.min.value;
-    let maximum = event.target.max.value;
-    let average = event.target.avg.value;
-}
-
