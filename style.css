@@ -1,38 +1,83 @@
 
+
+table,th, td{
+    border: solid;
+    text-align: center;
+
 table, td, tr, th{
     border: solid;
 }
 
 .styled-table {
+
     border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+table, th, tr, td{
+   margin-left: auto;
+   margin-right: auto;
+   width: 70%;
 }
 
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+table{table-layout: inherit;}
+
+th:hover{background-color: salmon;}
+
+h1{font-style:italic;}
+
+h1:hover{text-align: center;
+background-color: orangered;
+font-style: oblique;
 }
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
+
+
+div{float: right;}
+td:hover{background-color:mediumturquoise;}
+
+
+
+#container{
+    
+        border-collapse: collapse;
+   
+    
+      border: 1px solid #ccc;
+    
+    
+        margin:0 auto;
+    }
+   
+    table{ margin-left: auto;
+        margin-right: auto;
+        position:absolute; 
+        left:160px; 
+        top:120px;
+      }
+
+      body{background-image:url(fish.jpg);
+    background-repeat: no-repeat;
+background-size: 100%;}
+
+.imag{  vertical-align: middle;
+    width: 65px;
+    height: 65px;
+    border-radius: 70%;}
+
+    .flip:hover{-webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    float: right;} 
+  
+      #shirt{float: right;
+        width: 100px;
+        height: 100px;
+        border-radius: 85%;
+   }
+
+   .last-comp-container{position: relative;
+    height: 200px; /*should be the same height as the images*/}
+
+   .last-comp-container{position: absolute;
+    width: auto;
+    height: auto;
+    overflow:hidden;}
 
