@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <title>Sales Data: Pat's Salmon Cookies</title>
 </head>
+<p><a href="sales.html"><img src="https://web.partnership.vcu.edu/projectseedva/images/Return-To-Home-Page-Button.png" style="width: 150px; border-bottom: outset;"></a></p>
 <!-- <style>
 .styled-table {
     border-collapse: collapse;
@@ -42,7 +43,38 @@
 </style> -->
 
 
-<body>
+<body style="background-color: sandybrown;">
+    <form action="" id="salesData">
+
+        <fieldset>
+          <!-- <p><a href="index.html">sales</a></p> -->
+
+          <legend>add a new city</legend>
+
+          <label for="locationName">Add location</label>
+          <input type="text" id="location" autocomplete="on" required>
+          <br>
+
+          <label for="min">min # of customers </label>
+          <input type="number" id="min" placeholder="add a number" required>
+          <br>
+          <label for="max">max # of customers </label>
+          <input type="number" id="max" placeholder="add a number" required>
+          <br>
+          <label for="cookies">average of cookies </label>
+          <input type="number" id="avg" placeholder="add a number" required>
+          <br>
+          <input type="checkbox" id="agree" required>
+          <label for="agreement">I agree</label>
+          <br>
+          <br>
+          <input type="submit" value="press here">
+        </fieldset>
+      </form>
+    <header>
+        <!-- <p><a href="sales.html">sales
+        </a></p> -->
+    </header>
     <h1>Pat's Salmon Cookies: Sales Data</h1>
     <div id="parent"></div>
     <!-- <h2>Seattle</h2>
@@ -74,6 +106,7 @@
       <th></th>
       <th></th></tr>
   </table> -->
+ 
 </body>
 <script src="shop.js"></script>
 <link rel="stylesheet" href="style.css">
@@ -81,3 +114,4 @@
 <!-- <style src="myStyle.css"></style> -->
 
 </html>
+
