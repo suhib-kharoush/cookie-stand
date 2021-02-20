@@ -30,6 +30,10 @@ background-color: orangered;
 font-style: oblique;
 }
 
+ #tokyo{float: right;
+}
+
+
 
 div{float: right;}
 td:hover{background-color:mediumturquoise;}

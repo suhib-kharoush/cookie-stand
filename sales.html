@@ -61,6 +61,9 @@
 
 </head>
 
+
+<body style="background-color: lightslategrey;">
+
 <body>
 
 
@@ -132,42 +135,196 @@
     
 </script> -->
 <style src="myStyle.css"></style>
+
   <header>
-    
+
     <main>
-<form action="" id="salesData">
-      <fieldset>
-        
+      <p><a href="index.html"><img
+            src="http://www.photomint.com/wp-content/uploads/2011/08/Sales-Marketing_300x200_a.png" style="    width: 100px;
+        border-style: ridge;"></a></p>
+      <!-- <form action="" id="salesData">
+
+        <fieldset>
+          <p><a href="index.html">sales</a></p>
+
+          <legend>add a new city</legend>
 
           <label for="locationName">Add location</label>
-          <input type="text" id="location" autocomplete="on">
+          <input type="text" id="location" autocomplete="on" required>
           <br>
 
           <label for="min">min # of customers </label>
-          <input type="text" id="min" placeholder="add a number">
+          <input type="number" id="min" placeholder="add a number" required>
           <br>
           <label for="max">max # of customers </label>
-          <input type="text" id="max" placeholder="add a number">
+          <input type="number" id="max" placeholder="add a number" required>
           <br>
           <label for="cookies">average of cookies </label>
-          <input type="text" id="avg" placeholder="add a number">
+          <input type="number" id="avg" placeholder="add a number" required>
           <br>
-          <input type="checkbox" id="agree">
+          <input type="checkbox" id="agree" required>
           <label for="agreement">I agree</label>
           <br>
           <br>
           <input type="submit" value="press here">
-      </fieldset>
-      </form>
-
+        </fieldset>
+      </form> -->
+      <div><img src="https://www.joc.com/sites/default/files/field_feature_image/seattle%2016.jpg"
+          style="border-radius: 20px; width: 744px; height: 415px;">
+        <img id="tokyo" src="https://i.ytimg.com/vi/A-FXQHzlxAs/maxresdefault.jpg"
+          style="border-radius: 20px; width: 744px; float: right;">
+        <img src="https://cdn-images-1.medium.com/max/1200/1*IxoEo3oXnPUdvjhmFarUFw.jpeg"
+          style="border-radius: 20px; width: -webkit-fill-available">
+        <img src="https://data.jigsawpuzzle.co.uk/educa.17/sunset-at-paris-jigsaw-puzzle-3000-pieces.63863-1.fs.jpg"
+          style="border-radius: 20px; width: 744px; float: right;">
+      </div>
+      <img src="https://www.newyorker.com/wp-content/uploads/2017/04/Ben-Thomas-Dubai-7.jpg"
+        style="border-radius: 20px; width: 744px; height: 525px;"></div>
 
     </main>
     <br>
-    <div id="container"></div>
+  
+
+    <!-- <div id="container"></div> -->
 
   </header>
 
 </body>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>ORDER HERE</h2>
+  <br>
+  
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="chinook.jpg"  style="width:100%">
+        <div class="container">
+          <h2>chinook</h2>
+          <p class="title">grilled</p>
+          <p>Order one and get one free</p>
+          <p>salmonCookies@example.com</p>
+          <p><button class="button">Contact us "+962(79734...)" </button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="frosted-cookie.jpg"  style="width:100%">
+        <div class="container">
+          <h2>frosted-cookie</h2>
+          <p class="title">extra sugar</p>
+          <p>free delivery</p>
+          <p>salmonCookies@example.com</p>
+          <p><button class="button">Contact us "+962(79734...)"</button></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="card">
+        <img src="fish.jpg"  style="width:100%">
+        <div class="container">
+          <h2>fish</h2>
+          <p class="title">small cookies</p>
+          <p>new</p>
+          <p>salmonCookies@example.com</p>
+          <p><button class="button">Contact us "+962(79734...)"</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+      <div class="card">
+        <img src="shirt.jpg"  style="width:100%">
+        <div class="container">
+          <h2>shirt</h2>
+          <p class="title">our logo</p>
+          <p>free with family order</p>
+          <p>salmonCookies@example.com</p>
+          <p><button class="button">Contact us "+962(79734...)"</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+      <div class="card">
+        <img src="cutter.jpeg"  style="width:100%">
+        <div class="container">
+          <h2>cutter</h2>
+          <p class="title">cookies cutter</p>
+          <p>free with frosted-cookie</p>
+          <p>salmonCookies@example.com</p>
+          <p><button class="button">Contact us "+962(79734...)"</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+  </html>
 <script src="shop.js"></script>
 
 </html>
