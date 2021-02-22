@@ -11,7 +11,8 @@ table, th, tr, td{
    width: 70%;
 }
 
-table{table-layout: inherit;}
+table{table-layout: inherit;
+}
 
 th:hover{background-color: salmon;}
 
@@ -42,7 +43,7 @@ td:hover{background-color:mediumturquoise;}
         margin-right: auto;
         position:absolute; 
         left:160px; 
-        top:120px;
+        top:400px;
       }
 
       body{background-image:url(fish.jpg);
