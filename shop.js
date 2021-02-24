@@ -516,3 +516,65 @@ totalCell();
 
 
 
+
+
+
+// let salesData = document.getElementById('salesData');
+// salesData.addEventListener('submit' ,submitter)
+
+// function submitter(event)
+// {
+//     event.preventDefault();
+//     location.innerHTML =''
+
+//     let userShop = event.target.location.value;
+//     console.log(userShop);
+//     let minimum = event.target.min.value;
+//     let maximum = event.target.max.value;
+//     let average = event.target.avg.value;
+
+// }
+let salesData = document.getElementById('salesData');
+
+totalOfTotal();
+
+
+
+salesData.addEventListener('submit',submitter);
+function submitter(event){
+  event.preventDefault();
+  tableElement.innerHTML=''
+
+let newShop =event.target.name.value.required;
+let min = event.target.min.value.required;
+let max = event.target.max.value.required;
+let avg = event.target.avg.value.required;
+
+let salesData = new Shop(newShop, min,max,avg)
+salesData.calcCustomersEachHour();
+salesData.calcCookiesEachHour();
+createShopRow();
+// fourthShop.render();
+totalCell();
+
+}
+// var addcity = document.getElementById('salesData');
+
+// addcity.addEventListener('submit',adding);
+// function adding(event){
+//   event.preventDefault();
+//   table.innerHTML=''
+
+//  var newname =event.target.name.value. required;
+//  var min = event.target.minnumber.value;
+//  var max = event.target.maxnumber.value;
+//  var avg = event.target.avgnumber.value;
+
+// var addedcity = new Shop(newname, min,max,avg)
+// addedcity.getCustomer();
+// addedcity.getCookies();
+// Header();
+// Seattle.Suhib();
+// Footer();
+
+// }
